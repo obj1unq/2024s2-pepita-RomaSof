@@ -47,7 +47,7 @@ object pepon {
 	var energia = 30
 	//setter
    method comer(comida) {
-		energia = energia + comida.energiaQueAporta() % 2  //no sé por qué no me anda cuando lo pruevo en el terminal.
+		energia = energia + comida.energiaQueAporta() / 2  
 	}
   //setter
   method volar(distancia) {
@@ -70,8 +70,8 @@ object roque {
 	}
 	//setter
 	method alimentar(comida) {
+	  vecesQueAlimentoAve = vecesQueAlimentoAve + 1
 	  aveDeRoque.comer(comida)
-	  vecesQueAlimentoAve = + 1
 	}
 	//getter
 	method cenas() {

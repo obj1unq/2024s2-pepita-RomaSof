@@ -1,21 +1,16 @@
 object pepita {
 	var energia = 100
-	//setter
 	method comer(comida) {
 		energia = energia + comida.energiaQueAporta()
 	}
-	//setter
 	method volar(distancia) {
 		energia = energia - 10 - distancia
 	}
-	//getter
 	method energia() {
 		return energia
 	}
 }
-
 object alpiste {
-	//getter
 	method energiaQueAporta() {
 		return 20
 	}
@@ -24,19 +19,15 @@ object alpiste {
 object manzana {
 	var madurez = 1
 	const base = 5
-	//getter
 	method madurez() {
 		return madurez
 	}
-	//setter
 	method madurez(_madurez) {
 		madurez = _madurez
 	}
-	//setter
 	method madurar() {
 		self.madurez(madurez + 1)
 	}
-	//getter
 	method energiaQueAporta() {
 		return base * madurez
 	}	
@@ -45,15 +36,12 @@ object manzana {
 //Ejercicio 1: Pepón
 object pepon {
 	var energia = 30
-	//setter
    method comer(comida) {
 		energia = energia + comida.energiaQueAporta() / 2  
 	}
-  //setter
   method volar(distancia) {
 	energia = energia - 20 - (2 * distancia)
   }
-  //getter
   method energia() {
 	return energia
   }
@@ -61,20 +49,20 @@ object pepon {
 
 //Ejercicio 2: Roque
 object roque {
-	var aveDeRoque = pepon 
+	//Aclarar que es de Roque no tiene sentido ya que pertenece al objeto "Roque"
+	var aveAhora = pepon 
 	var vecesQueAlimentoAve = 0
-	//setter
 	method indicarNuevaAve(ave) {
-	  aveDeRoque = ave
+	  aveAhora = ave
 	  vecesQueAlimentoAve = 0
 	}
-	//setter
+	//a veces el orden de las acciones ejecución de los mensajes importa.
 	method alimentar(comida) {
+	  aveAhora.comer(comida)
 	  vecesQueAlimentoAve = vecesQueAlimentoAve + 1
-	  aveDeRoque.comer(comida)
 	}
-	//getter
 	method cenas() {
 	  return vecesQueAlimentoAve
 	}
 }
+//para ser un setter tiene que cumplir que el método se llame como el atributo y reemplace el valor con el del parámetro.
